@@ -5,7 +5,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/wingshope/bot/master/access > /root/tmp
+    curl -sS https://raw.githubusercontent.com/lunoxxdev/b0t-PleRrrr/main/access > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -23,7 +23,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/wingshope/bot/master/access | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/lunoxxdev/b0t-PleRrrr/main/access | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -40,7 +40,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/wingshope/bot/master/access | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/lunoxxdev/b0t-PleRrrr/main/access | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -108,7 +108,7 @@ EOF
 fun_botOnOff() {
 dircreate
         [[ ! -f /etc/.maAsiss/bot.conf ]] && {
-        echo -e "wings Bot Panel Installer
+        echo -e "Lunoxx Bot Panel Installer
         "
         [[ ! -f /root/ResBotAuth ]] && {
         echo -ne "Input your Bot TOKEN : "
@@ -118,17 +118,17 @@ dircreate
         read adm_ids
         echo "Admin_ID=$adm_ids" >> /root/ResBotAuth
         }
-        echo -ne "Username admin panel use '@' [Ex: @wingshope] : "
+        echo -ne "Username admin panel use '@' [Ex: @lunoxxgay] : "
         read admin_pnl
-        [[ -z $admin_pnl ]] && admin_pnl="@wingshope"
+        [[ -z $admin_pnl ]] && admin_pnl="@lunoxxgay"
         echo ""
         echo -ne "Limit trial for reseller create user trial [default:1] : "
         read limit_pnl
         [[ -z $limit_pnl ]] && limit_pnl="1"
         echo ""
-        echo -ne "Your name store [dafult: wings-STORE] : "
+        echo -ne "Your name store [dafult: Lunoxx-WRT] : "
         read store_pnl
-        [[ -z $store_pnl ]] && store_pnl="wings-STORE"
+        [[ -z $store_pnl ]] && store_pnl="Lunoxx-WRT"
         echo ""
 cat <<-EOF >/etc/.maAsiss/bot.conf
 admin_panel : $admin_pnl
@@ -139,7 +139,7 @@ EOF
         echo -e "Info...\n"
         fun_bot1() {
             [[ ! -e "/etc/.maAsiss/.Shellbtsss" ]] && {
-				wget -qO- https://raw.githubusercontent.com/wingshope/bot/master/ShellBot.sh >/etc/.maAsiss/.Shellbtsss
+				wget -qO- https://raw.githubusercontent.com/lunoxxdev/b0t-PleRrrr/main/ShellBot.sh >/etc/.maAsiss/.Shellbtsss
 			}
 			[[ "$(grep -wc "wings_bot" "/etc/rc.local")" = '0' ]] && {
 			    sed -i '$ i\screen -dmS wings_bot bbt' /etc/rc.local >/dev/null 2>&1
